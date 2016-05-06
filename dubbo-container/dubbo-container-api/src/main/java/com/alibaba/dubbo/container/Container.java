@@ -22,17 +22,24 @@ import com.alibaba.dubbo.common.extension.SPI;
  * 
  * @author william.liangf
  */
+
+/**
+ * 容器扩展点. 比如Spring, Log4j等等
+ * @author lvchenggang
+ *
+ */
+
 @SPI("spring")
 public interface Container {
-    
-    /**
-     * start.
-     */
-    void start();
-    
-    /**
-     * stop.
-     */
-    void stop();
+
+	/**
+	 * start.
+	 */
+	void start();
+
+	/**
+	 * stop.
+	 */
+	void stop();
 
 }

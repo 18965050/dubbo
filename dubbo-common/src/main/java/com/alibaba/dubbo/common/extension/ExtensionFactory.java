@@ -21,16 +21,23 @@ package com.alibaba.dubbo.common.extension;
  * @author william.liangf
  * @export
  */
+
+/**
+ * 扩展点本身的加载容器.
+ * @author lvchenggang
+ *
+ */
+
 @SPI
 public interface ExtensionFactory {
 
-    /**
-     * Get extension.
-     * 
-     * @param type object type.
-     * @param name object name.
-     * @return object instance.
-     */
-    <T> T getExtension(Class<T> type, String name);
+	/**
+	 * Get extension.
+	 * 
+	 * @param type object type.
+	 * @param name object name.
+	 * @return object instance.
+	 */
+	<T> T getExtension(Class<T> type, String name);
 
 }
