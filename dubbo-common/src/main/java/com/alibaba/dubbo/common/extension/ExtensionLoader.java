@@ -762,6 +762,12 @@ public class ExtensionLoader<T> {
 		return cachedAdaptiveClass = createAdaptiveExtensionClass();
 	}
 
+	/**
+	 * 动态生成Wrapper扩展类. <br />
+	 * 之所以动态生成, 是由于这些方法结构类似. 只是参数不同(从URL中获取). <br />
+	 * 生成的时候针对方法是否有@Adaptive注解. 有则动态生成. 没有表示此方法不支持, 抛出UnsupportedOperationException异常.
+	 * @return
+	 */
 	private Class<?> createAdaptiveExtensionClass() {
 		String code = createAdaptiveExtensionClassCode();
 		ClassLoader classLoader = findClassLoader();

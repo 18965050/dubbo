@@ -48,14 +48,21 @@ yyy=com.foo.YyyProtocol
  * @author ding.lid
  * @export
  */
+
+/**
+ * 用以标示默认的扩展点名称. <br />
+ * 扩展点也可以不用此注解标示. 如果这样的话, 扩展点的加载必须指明名称
+ * @author lvchenggang
+ *
+ */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.TYPE})
+@Target({ ElementType.TYPE })
 public @interface SPI {
 
-    /**
-     * 缺省扩展点名。
-     */
+	/**
+	 * 缺省扩展点名。
+	 */
 	String value() default "";
 
 }
